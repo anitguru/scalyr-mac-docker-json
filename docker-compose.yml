@@ -1,0 +1,15 @@
+services:
+  scalyr-agent:
+    image: scalyr/scalyr-agent-docker-json:latest
+    container_name: scalyr-agent
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      SCALYR_API_KEY: "${SCALYR_API_KEY}"
+
+    volumes:
+      - "${HOST_LOG_DIR}:/host_logs:ro"
+      - "./docker.json:/etc/scalyr-agent-2/agent.d/docker.json:ro"

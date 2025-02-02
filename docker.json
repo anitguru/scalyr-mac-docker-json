@@ -1,0 +1,14 @@
+{
+  "server_attributes": {
+    "serverHost": "scrapper",
+    "tier": "spacebridge",
+    "stage": "constructing",
+    "datacenter": "cybertron"
+  },
+  "logs": [
+    {
+      "path": "/host_logs/*.log",
+      "attributes": { "parser": "json" }
+    }
+  ]
+}
